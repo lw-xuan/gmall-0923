@@ -5,17 +5,21 @@ import com.atguigu.gmall.common.bean.PageResultVo;
 import com.atguigu.gmall.common.bean.PageParamVo;
 import com.atguigu.gmall.pms.entity.AttrEntity;
 
+import java.util.List;
 import java.util.Map;
+
 
 /**
  * 商品属性
  *
- * @author ÁõÎÄÐù
- * @email lwx991113@163.com
- * @date 2021-03-08 21:17:35
+ * @author fengge
+ * @email fengge@atguigu.com
+ * @date 2021-03-08 14:58:56
  */
 public interface AttrService extends IService<AttrEntity> {
 
     PageResultVo queryPage(PageParamVo paramVo);
+
+    List<AttrEntity> queryAttrByCidOrTypeOrSearchType(Long cid, Integer type, Integer searchType);
 }
 

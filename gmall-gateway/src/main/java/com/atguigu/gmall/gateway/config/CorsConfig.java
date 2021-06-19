@@ -10,11 +10,16 @@ import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 public class CorsConfig {
     @Bean
     public CorsWebFilter corsWebFilter(){
+        //初始化cors配置类
         CorsConfiguration config = new CorsConfiguration();
+        //允许跨域访问的域名。*：代表所有域名可以跨域访问，但不能携带cookie。要携带cookie，这里必须配置具体的域名
         config.addAllowedOrigin("http://manager.gmall.com");
         config.addAllowedOrigin("http://www.gmall.com");
+        // 允许携带所有头信息
         config.addAllowedHeader("*");
+        // 允许所有请求方式跨域访问
         config.addAllowedMethod("*");
+        // 允许携带cookie
         config.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource corsConfigurationSource = new UrlBasedCorsConfigurationSource();
